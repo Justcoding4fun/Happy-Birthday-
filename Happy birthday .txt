@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Babe!</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 50px;
+            color: white;
+            text-shadow: 3px 3px 5px red;
+        }
+        .balloon {
+            position: absolute;
+            width: 50px;
+            animation: float 5s infinite ease-in-out;
+        }
+        .cake {
+            width: 200px;
+            margin-top: 20px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-10vh); }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎈🎂 Happy Birthday Babe! 🎂🎈</h1>
+    <img src="https://clipart-library.com/images/8TzKjdgpi.png" class="cake" alt="Cake"><script>
+    function createBalloon() {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.innerHTML = "🎈";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(balloon);
+        setTimeout(() => balloon.remove(), 5000);
+    }
+    setInterval(createBalloon, 500);
+</script>
+
+</body>
+</html>
